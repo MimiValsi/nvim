@@ -36,15 +36,17 @@ return {
       },
 
     })
-    -- require("telescope.builtin").current_buffer_fuzzy_find(mimi())
+
     local builtin = require('telescope.builtin')
     local map = vim.keymap.set
 
     map('n', '<leader>sf', function() builtin.find_files(require('telescope.themes').get_dropdown({
       layout_strategy = 'vertical',
+      prompt_title = false,
+      preview_title = false,
       layout_config = {
-      	height = 0.90,
-      	width = 0.90,
+      	height = 0.95,
+      	width = 0.95,
       	mirror = true,
       	prompt_position = 'top',
       },
