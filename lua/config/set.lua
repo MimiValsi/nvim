@@ -7,7 +7,7 @@ o.backupdir = os.getenv 'HOME' .. '/.vim/backupdir'
 o.breakindentopt = 'column:80'
 -- o.browsedir = "{path}" -- Something can be done with this...
 o.cindent = true
-o.clipboard = "unnamed,unnamedplus" 
+o.clipboard = "unnamed,unnamedplus"
 -- o.comments -- check for plugin
 -- o.commentstring -- same check for plugin
 o.completeopt = "menu,menuone,longest,preview"
@@ -31,3 +31,13 @@ o.textwidth = 80
 o.timeoutlen = 300
 o.undodir = os.getenv "HOME" .. "/.vim/undodir"
 o.undofile = true
+
+-- Disable diagnostic virtual_text when entering a buffer.
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  callback = function()
+    vim.diagnostic.config({
+      virtual_text = false,
+    })
+  end
+})
