@@ -4,8 +4,11 @@ return {
     { 'williamboman/mason.nvim', config = true },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
+    'saghen/blink.cmp',
   },
   config = function()
+
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
 
     local servers = {
       bashls = {},
@@ -17,6 +20,9 @@ return {
       lua_ls = {
 	settings = {
 	  Lua = {
+	    completion = {
+	      callSnippet = 'Replace',
+	    },
 	    diagnostics = {
 	      globals = { 'vim' },
 	    },
@@ -63,7 +69,7 @@ return {
        handlers = {
        	function(server_name)
        	  local server = servers[server_name] or {}
-       	  server.capabilities = vim.tbl_deep_extend('force', {}, server.capabilities or {})
+       	  server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
 
        	  require('lspconfig')[server_name].setup(server)
        	end
