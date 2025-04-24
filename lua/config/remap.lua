@@ -6,7 +6,6 @@ map('n', '<leader>q', ':q<cr>', { desc = 'save file' })
 map('n', ';', ':', { desc = 'swap : to ;' })
 map('n', '<C-i>', ':tabn<cr>', { desc = 'go to next tab' })
 map('n', '<C-o>', ':tabp<cr>', { desc = 'go to prev tab' })
-map('n', '<C-g>', '<esc>', { desc = 'go to prev tab' })
 map('n', '<leader>T', ':tab new<cr>', { desc = 'New tab' })
 map('n', '<leader>t', ':tab ter<cr>', { desc = 'New tab with terminal' })
 map('n', '<leader>ra',
@@ -16,15 +15,15 @@ map('n', 'Q', ':noh<cr>', { desc = 'Disable Q and cleans mini buffer from messag
 map('n', '<leader>V', ':vert terminal<cr>', { desc = 'Open vertical in vertical split' })
 map('n', '<leader>v', ':vsplit<cr>', { desc = 'Vertical split' })
 map('n', '<leader>db', ':1, .-bdelete<cr>', { desc = 'Delete all buffers except tabbed' })
-map('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
+map('n', '<leader>x', ':!chmod +x %<CR>', { silent = true })
 map('n', '<leader>cd', ':cd %:p:h<cr>')
+map('n', '<F4>', '<cmd>:cd %:p:h<cr>')
+
 map('n', '<leader>ra',
   ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', { desc = 'replace the word everywhere in the file/buffer' })
 
-map('n', '<leader>db', ':1, .-bdelete<cr>', { desc = 'Delete all buffers except tabbed' })
 map('n', '<leader>d', '"_dd')
-map('n', '<leader>fd', '<cmd>Trouble diagnostics toggle<cr>')
-map('n', '<F4>', '<cmd>:cd %:p:h<cr>')
+map('n', '<leader>fd', ':Trouble diagnostics toggle<cr>')
 
 -- dvorak
 --map('n', 'h', '<down>')
@@ -43,6 +42,7 @@ map('i', '<C-k>', '<up>', { desc = 'Move up in insert mode'})
 map('i', '<C-l>', '<right>', { desc = 'Move right in insert mode'})
 map('i', '<C-b>', '<ESC>^i', { desc = 'Go to begining of line' })
 map('i', '<C-e>', '<End>', { desc = 'Go to end of line' })
+map('i', '<C-g>', '<Esc>')
 
 -- visual mode
 map('v', 'J', ":m '>+1<CR>gv=gv", {
