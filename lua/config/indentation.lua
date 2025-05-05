@@ -14,5 +14,6 @@ autocmd('FileType', {
 
   callback = function()
     vim.opt.matchpairs = "(:),{:},[:],<:>"
+    vim.opt.shiftwidth = 2
   end
 })
