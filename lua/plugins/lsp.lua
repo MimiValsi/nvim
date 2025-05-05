@@ -17,6 +17,8 @@ return {
       	filetypes = { 'c', 'cpp' },
       },
 
+      html = {},
+
       lua_ls = {
 	settings = {
 	  Lua = {
