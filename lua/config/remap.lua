@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map('n', '<leader>e', ':Ex<cr>', { desc = 'Explorer' })
+map('n', '<leader>e', ':Oil<cr>', { desc = 'Explorer' })
 map('n', '<leader>w', ':w<cr>', { desc = 'save file' })
 map('n', '<leader>q', ':q<cr>', { desc = 'save file' })
 map('n', ';', ':', { desc = 'swap : to ;' })
