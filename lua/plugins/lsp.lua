@@ -49,9 +49,8 @@ return {
 
       pyright = {},
 
-      sqlls = {},
-
       -- sqlls = {},
+
       postgrestools = {
 	require('lspconfig').postgres_lsp.setup {
 	  cmd = { "postgrestools", "lsp-proxy" },

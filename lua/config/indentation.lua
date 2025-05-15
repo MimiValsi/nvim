@@ -10,7 +10,7 @@ autocmd('FileType', {
 
 
 autocmd('FileType', {
-  pattern = 'html',
+  pattern = { 'html', 'sql' },
 
   callback = function()
     vim.opt.matchpairs = "(:),{:},[:],<:>"
